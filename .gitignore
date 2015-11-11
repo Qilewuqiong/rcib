@@ -14,7 +14,7 @@ _UpgradeReport_Files/
 ipch/
 *.sdf
 *.opensdf
-
+*.log
 build
 .git
 node_modules
