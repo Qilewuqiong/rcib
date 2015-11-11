@@ -22,10 +22,18 @@
     "type": "git",
     "url": "https://github.com/classfellow/rcib.git"
   },
-  "main": "index.js",
+  "main": "./index.js",
+  "license": "MIT",
   "engines": {
     "node": ">=4.0.0"
   },
+  "contributors": [
+    {
+      "name": "You Jia",
+      "email": "classfellow@qq.com",
+      "url": "https://github.com/classfellow/rcib.git"
+    }
+  ],
   "dependencies":{
     },
   "scripts": {
