@@ -31,18 +31,18 @@ rcib.postDelayedTask(path.join(__dirname, './background.js'), 'globalFunction2',
     else console.log(value)
 })
 
-# 'postTask' mesans to run a function in background js. It accepts four parameters.
-# param1 : full path to a js file
-# param2 : function name to run
-# param3 : parameters in json whith will be used by param2
-# param4 : callback function 
+'postTask' mesans to run a function in background js. It accepts four parameters.
+   param1 : full path to a js file
+   param2 : function name to run
+   param3 : parameters in json whith will be used by param2
+   param4 : callback function 
 
-# 'postDelayedTask' mesans to run a function in background js after specified milliseconds. It accepts five parameters.
-# param1 : full path to a js file
-# param2 : function name to run
-# param3 : parameters in json whith will be used by param2
-# param4 : delayed time in millisecond
-# param5 : callback function
+'postDelayedTask' mesans to run a function in background js after specified milliseconds. It accepts five parameters.
+   param1 : full path to a js file
+   param2 : function name to run
+   param3 : parameters in json whith will be used by param2
+   param4 : delayed time in millisecond
+   param5 : callback function
 
 
 ## Extends node in command mode and C++ closures
@@ -57,6 +57,6 @@ class Red : public base::RefCounted {
 local_thread_.Get().message_loop()->PostTask(base::Bind((new Red),
     &Red::Func, param1, param2));
 
-# Derive your class from base::RefCounted
-# new a object
-# post a c++ closure 
+ Derive your class from base::RefCounted
+ new a Red
+ post a c++ closure 
