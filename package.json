@@ -1,0 +1,35 @@
+{
+  "author": {
+    "name": "YouJ",
+    "email": "classfellow@qq.com"
+  },
+  "name": "rcib",
+  "description": "run your codes in background js or extend node by c++ closures",
+  "keywords": [
+    "node",
+    "cpu-intensive",
+    "background",
+    "backgroundjs",
+    "nodejs",
+    "libuv",
+    "c++",
+    "example"
+  ],
+  "version": "0.4.0",
+  "url": "https://github.com/classfellow/rcib.git",
+  "homepage": "https://github.com/classfellow/rcib.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/classfellow/rcib.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies":{
+    },
+  "scripts": {
+    "install": "node-gyp rebuild",
+    "tset":"node ./test/pressure-test.js"
+  }
+}
