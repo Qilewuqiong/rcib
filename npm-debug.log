@@ -1,0 +1,107 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@2.14.2
+3 info using node@v4.0.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'C:\\GitHub\\rcib',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Program Files\nodejs\node_cache\rcib\0.4.0\package.tgz not in flight; packing
+9 verbose tar pack [ 'C:\\Program Files\\nodejs\\node_cache\\rcib\\0.4.0\\package.tgz',
+9 verbose tar pack   'C:\\GitHub\\rcib' ]
+10 verbose tarball C:\Program Files\nodejs\node_cache\rcib\0.4.0\package.tgz
+11 verbose folder C:\GitHub\rcib
+12 info prepublish rcib@0.4.0
+13 verbose addLocalTarball adding from inside cache C:\Program Files\nodejs\node_cache\rcib\0.4.0\package.tgz
+14 silly cache afterAdd rcib@0.4.0
+15 verbose afterAdd C:\Program Files\nodejs\node_cache\rcib\0.4.0\package\package.json not in flight; writing
+16 verbose afterAdd C:\Program Files\nodejs\node_cache\rcib\0.4.0\package\package.json written
+17 silly publish { author: { name: 'YouJ', email: 'classfellow@qq.com' },
+17 silly publish   name: 'rcib',
+17 silly publish   description: 'run your codes in background js or extend node by c++ closures',
+17 silly publish   keywords:
+17 silly publish    [ 'node',
+17 silly publish      'cpu-intensive',
+17 silly publish      'background',
+17 silly publish      'backgroundjs',
+17 silly publish      'nodejs',
+17 silly publish      'libuv',
+17 silly publish      'c++',
+17 silly publish      'example' ],
+17 silly publish   version: '0.4.0',
+17 silly publish   url: 'https://github.com/classfellow/rcib.git',
+17 silly publish   homepage: 'https://github.com/classfellow/rcib.git',
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/classfellow/rcib.git' },
+17 silly publish   main: './index.js',
+17 silly publish   license: 'MIT',
+17 silly publish   engines: { node: '>=4.0.0' },
+17 silly publish   contributors:
+17 silly publish    [ { name: 'You Jia',
+17 silly publish        email: 'classfellow@qq.com',
+17 silly publish        url: 'https://github.com/classfellow/rcib.git' } ],
+17 silly publish   dependencies: {},
+17 silly publish   scripts:
+17 silly publish    { install: 'node-gyp rebuild',
+17 silly publish      tset: 'node ./test/pressure-test.js' },
+17 silly publish   gitHead: '8ac9ff9ab41d4c7934850a354fe941e45d8f4a9f',
+17 silly publish   readme: '#\'rcib\'\r\n\r\nRCIB(running codes in background js) is a node.js package for providing ability to run js codes in background or a way to extend node.js by C++ closures.\r\n\r\n**[Follow me on github!](https://github.com/classfellow/rcib)**\r\n\r\n\r\n##Compile & Link\r\n\r\nnpm install -g node-gyp\r\nnode-gyp configure\r\nnode-gyp build\r\n\r\n\r\n## Usage\r\n\r\n#example:\r\n\r\nvar path = require(\'path\')\r\nvar rcib = require(\'../index.js\')\r\n\r\nrcib.postTask(path.join(__dirname, \'./background.js\'), \'globalFunction2\', \r\n JSON.stringify({a:100, b: 200}), function (err, value){\r\n   if(err) console.error(err)\r\n   else console.log(value)\r\n})\r\n\r\nrcib.postDelayedTask(path.join(__dirname, \'./background.js\'), \'globalFunction2\', \r\n  JSON.stringify({a:100, b: 200}), 1000, function (err, value){\r\n    if(err) console.error(err)\r\n    else console.log(value)\r\n})\r\n\r\n\'postTask\' mesans to run a function in background js. It accepts four parameters.\r\n   param1 : full path to a js file\r\n   param2 : function name to run\r\n   param3 : parameters in json whith will be used by param2\r\n   param4 : callback function \r\n\r\n\'postDelayedTask\' mesans to run a function in background js after specified milliseconds. It accepts five parameters.\r\n   param1 : full path to a js file\r\n   param2 : function name to run\r\n   param3 : parameters in json whith will be used by param2\r\n   param4 : delayed time in millisecond\r\n   param5 : callback function\r\n\r\n\r\n## Extends node in command mode and C++ closures\r\n\r\n#exmple:\r\n\r\nclass Red : public base::RefCounted {\r\n  void Func() {}\r\n  // ...\r\n};\r\n\r\nlocal_thread_.Get().message_loop()->PostTask(base::Bind((new Red),\r\n    &Red::Func, param1, param2));\r\n\r\n Derive your class from base::RefCounted\r\n new a Red\r\n post a c++ closure \r\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gypfile: true,
+17 silly publish   bugs: { url: 'https://github.com/classfellow/rcib/issues' },
+17 silly publish   _id: 'rcib@0.4.0',
+17 silly publish   _shasum: '5b282ed7cea998511dc9700cb1c69fd967647cc6',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name rcib
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry http://registry.cnpmjs.org/
+22 silly mapToRegistry uri http://registry.cnpmjs.org/rcib
+23 verbose publish registryBase http://registry.cnpmjs.org/
+24 silly publish uploading C:\Program Files\nodejs\node_cache\rcib\0.4.0\package.tgz
+25 verbose request uri http://registry.cnpmjs.org/rcib
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 14:45:45
+28 verbose request id d7a9640421559d7c
+29 http request PUT http://registry.cnpmjs.org/rcib
+30 http 403 http://registry.cnpmjs.org/rcib
+31 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+31 verbose headers   date: 'Wed, 11 Nov 2015 06:45:27 GMT',
+31 verbose headers   'content-type': 'application/json; charset=utf-8',
+31 verbose headers   'transfer-encoding': 'chunked',
+31 verbose headers   connection: 'keep-alive',
+31 verbose headers   'x-readtime': '7',
+31 verbose headers   'content-encoding': 'gzip' }
+32 verbose request invalidating C:\Program Files\nodejs\node_cache\registry.cnpmjs.org\rcib on PUT
+33 error publish Failed PUT 403
+34 verbose stack Error: no_perms can't publish non-scoped package, please set `config.scopes`: rcib
+34 verbose stack     at makeError (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:263:12)
+34 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:251:14)
+34 verbose stack     at C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:177:7
+34 verbose stack     at Gunzip.onEnd (zlib.js:227:5)
+34 verbose stack     at emitNone (events.js:72:20)
+34 verbose stack     at Gunzip.emit (events.js:166:7)
+34 verbose stack     at endReadableNT (_stream_readable.js:893:12)
+34 verbose stack     at doNTCallback2 (node.js:429:9)
+34 verbose stack     at process._tickCallback (node.js:343:17)
+35 verbose statusCode 403
+36 verbose pkgid rcib
+37 verbose cwd C:\GitHub\rcib
+38 error Windows_NT 6.1.7601
+39 error argv "C:\\Program Files (x86)\\nodejs\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+40 error node v4.0.0
+41 error npm  v2.14.2
+42 error code E403
+43 error no_perms can't publish non-scoped package, please set `config.scopes`: rcib
+44 error If you need help, you may report this error at:
+44 error     <https://github.com/npm/npm/issues>
+45 verbose exit [ 1, true ]

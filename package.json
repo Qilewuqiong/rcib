@@ -13,7 +13,7 @@
     "nodejs",
     "libuv",
     "c++",
-    "example"
+    "closure",
   ],
   "version": "0.4.0",
   "url": "https://github.com/classfellow/rcib.git",
@@ -32,7 +32,7 @@
       "name": "You Jia",
       "email": "classfellow@qq.com",
       "url": "https://github.com/classfellow/rcib.git"
-    }
+    },
   ],
   "dependencies":{
     },
