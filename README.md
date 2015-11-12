@@ -23,8 +23,8 @@ node-gyp build
 
 ###example:
 
-```javascript
->var path = require('path') <br>
+```js code
+> var path = require('path') <br>
  var rcib = require('../index.js') <br>
  rcib.postTask(path.join(__dirname, './background.js'), 'globalFunction2', <br>
    &nbsp;&nbsp;&nbsp; JSON.stringify({a:100, b: 200}), function (err, value){ <br>
@@ -32,7 +32,7 @@ node-gyp build
    &nbsp;&nbsp;&nbsp; else console.log(value) <br>
 })
 
->rcib.postDelayedTask(path.join(__dirname, './background.js'), 'globalFunction2', <br> 
+> rcib.postDelayedTask(path.join(__dirname, './background.js'), 'globalFunction2', <br> 
   &nbsp;&nbsp;&nbsp;JSON.stringify({a:100, b: 200}), 1000, function (err, value) { <br>
   &nbsp;&nbsp;&nbsp;  if(err) console.error(err) <br>
   &nbsp;&nbsp;&nbsp;  else console.log(value) <br>
@@ -69,7 +69,7 @@ node-gyp build
 
 ```C++ code
 
->class Red : public base::RefCounted { <br>
+> class Red : public base::RefCounted { <br>
   &nbsp;&nbsp;&nbsp;void Func() {} <br>
   &nbsp;&nbsp;&nbsp;// ... <br>
 }; <br>
