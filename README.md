@@ -8,7 +8,7 @@ RCIB(running codes in background js) is a node.js package for providing ability 
 ##Compile & Link
 > npm install -g node-gyp <br>
 node-gyp configure <br>
-node-gyp build <br>
+node-gyp build
 
 ##How it works
 
@@ -18,24 +18,23 @@ node-gyp build <br>
 ## Usage
 
 ###example:
-
-``` js code
+```js code
 > var path = require('path') <br>
  var rcib = require('../index.js') <br>
  rcib.postTask(path.join(__dirname, './background.js'), 'globalFunction2', <br>
    &nbsp;&nbsp;&nbsp; JSON.stringify({a:100, b: 200}), function (err, value){ <br>
    &nbsp;&nbsp;&nbsp; if(err) console.error(err) <br>
    &nbsp;&nbsp;&nbsp; else console.log(value) <br>
-})
+})<br>
+```
 
+```js code
 > rcib.postDelayedTask(path.join(__dirname, './background.js'), 'globalFunction2', <br> 
   &nbsp;&nbsp;&nbsp; JSON.stringify({a:100, b: 200}), 1000, function (err, value) { <br>
   &nbsp;&nbsp;&nbsp;  if(err) console.error(err) <br>
   &nbsp;&nbsp;&nbsp;  else console.log(value) <br>
-})
-
+}) <br>
 ```
-
 
 'postTask' mesans to run a function in background js. It accepts four parameters.
 
@@ -60,22 +59,17 @@ node-gyp build <br>
    param5 : callback function
 
 
-
 ## Extends node in command mode or C++ closures
 
 ###exmple:
-
 ``` C++ code
-
 > class Red : public base::RefCounted { <br>
   &nbsp;&nbsp;&nbsp;void Func() {} <br>
   &nbsp;&nbsp;&nbsp;// ... <br>
 }; <br>
 local_thread_.Get().message_loop()->PostTask(base::Bind((new Red), <br>
     &nbsp;&nbsp;&nbsp;&Red::Func, param1, param2)); <br>
-
 ```
-
 
  Derive your class from base::RefCounted
 
