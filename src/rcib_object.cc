@@ -203,6 +203,7 @@ namespace rcib {
       local_thread_.Get().set_thread_name("distribute_task_thread");
       local_thread_.Get().StartWithOptions(base::Thread::Options());
     }
+    array_buffer_allocator_.Get();
   }
 
   void RcibHelper::Terminate(){
