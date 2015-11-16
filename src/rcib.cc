@@ -57,10 +57,12 @@
 #include "rcib.h"
 
 using namespace rcib;
-extern base::LazyInstance<base::Thread> local_thread_;
+
 namespace rcib{
   extern bool bterminating_;
 }
+extern base::LazyInstance<base::Thread> local_thread_;
+
 // Post a task, runs in other thread
 void PostTask(const v8::FunctionCallbackInfo<v8::Value>& args) {
   //process existing

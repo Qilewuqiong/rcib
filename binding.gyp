@@ -9,6 +9,7 @@
             'sources': [
               'src/rcib.cc',
               'src/rcib_object.cc',
+              'src/globals.cc',
               'src/rcib/at_exist.cc',
               'src/rcib/lazy_instance.cc',
               'src/rcib/MessageLoop.cc',
@@ -50,6 +51,7 @@
             'sources': [
               'src/rcib.cc',
               'src/rcib_object.cc',
+              'src/globals.cc',
               'src/rcib/at_exist.cc',
               'src/rcib/lazy_instance.cc',
               'src/rcib/MessageLoop.cc',

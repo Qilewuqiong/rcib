@@ -18,3 +18,4 @@ ipch/
 build
 .git
 node_modules
+.cmd

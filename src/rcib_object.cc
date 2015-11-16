@@ -57,15 +57,10 @@
 #include "rcib.h"
 
 namespace rcib{
-  bool bterminating_ = false;
-  base::AtExitManager* g_top_manager = NULL;
-} //end rcib
-
-// should be after the previous statement
-base::AtExitManager atmgr;
-// should be after the previous statement. all global lazyInstance should be defined in this file.
-base::LazyInstance<rcib::ArrayBufferAllocator> array_buffer_allocator_ = LAZY_INSTANCE_INITIALIZER;
-base::LazyInstance<base::Thread> local_thread_ = LAZY_INSTANCE_INITIALIZER;
+  extern bool bterminating_;
+}
+extern base::LazyInstance<base::Thread> local_thread_;
+extern base::LazyInstance<rcib::ArrayBufferAllocator> array_buffer_allocator_;
 
 namespace rcib {
 

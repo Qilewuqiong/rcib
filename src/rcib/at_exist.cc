@@ -33,20 +33,18 @@
 #include "util_tools.h"
 #include "at_exist.h"
 
-namespace rcib {
-  extern base::AtExitManager* g_top_manager;
-}
+extern base::AtExitManager* g_top_manager;
 
 namespace base{
 
   AtExitManager::AtExitManager(){
-    rcib::g_top_manager = this;
+    g_top_manager = this;
   }
 
   AtExitManager::~AtExitManager(){
-    assert(this == rcib::g_top_manager);
+    assert(this == g_top_manager);
     ProcessCallbacksNow();
-    rcib::g_top_manager = NULL;
+    g_top_manager = NULL;
   }
 
   // static
@@ -57,30 +55,30 @@ namespace base{
 
   // static
   void AtExitManager::RegisterTask(fastdelegate::Task<void>* task) {
-    if (!rcib::g_top_manager) {
+    if (!g_top_manager) {
       assert(0); // "Tried to RegisterCallback without an AtExitManager";
       return;
     }
 
-    AutoCritSecLock<CriticalSection> lock(rcib::g_top_manager->m_cs, false);
+    AutoCritSecLock<CriticalSection> lock(g_top_manager->m_cs, false);
     lock.Lock();
-    rcib::g_top_manager->stack_.push(task);
+    g_top_manager->stack_.push(task);
   }
 
   // static
   void AtExitManager::ProcessCallbacksNow() {
-    if (!rcib::g_top_manager) {
+    if (!g_top_manager) {
       assert(0); //"Tried to ProcessCallbacksNow without an AtExitManager";
       return;
     }
 
-    AutoCritSecLock<CriticalSection> lock(rcib::g_top_manager->m_cs, false);
+    AutoCritSecLock<CriticalSection> lock(g_top_manager->m_cs, false);
     lock.Lock();
 
-    while (!rcib::g_top_manager->stack_.empty()) {
-      std::auto_ptr<fastdelegate::Task<void> > task(rcib::g_top_manager->stack_.top());
+    while (!g_top_manager->stack_.empty()) {
+      std::auto_ptr<fastdelegate::Task<void> > task(g_top_manager->stack_.top());
       task->Run();
-      rcib::g_top_manager->stack_.pop();
+      g_top_manager->stack_.pop();
     }
   }
 }
