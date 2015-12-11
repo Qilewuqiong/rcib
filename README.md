@@ -4,6 +4,8 @@ RCIB(running codes in background js) is a node.js package for providing ability 
 
 **[Follow me on github!](https://github.com/classfellow/rcib)**
 
+##Platform Support
+> Windows & Linux
 
 ##Compile & Link
 > npm install -g node-gyp <br>
